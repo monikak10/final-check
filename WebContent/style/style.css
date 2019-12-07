@@ -1,1 +1,139 @@
-/* Add styles for application here */
+header {
+	background-color: #4c6fa6;
+	height: 80px;
+	font-family: sans-Serif;
+	margin-rightr: 10px;
+}
+footer {
+	background-color: #adb3af ;
+	color: #a4b0a9;
+	height: 80px;
+	font-size: 20pt;
+	font-family: sans-Serif;
+}
+body {
+	height: 100%;
+	width: 100%;
+	font-family: sans-Serif;
+}
+div {
+	height: 730px;
+}
+a {
+	color: #1a1c1a;
+}
+.img-edit {
+	height: 50px;
+	width: 50px;
+	margin-left: 25px;
+}
+.txt-left {
+	text-align: left;
+	width: 950px;
+}
+.txt-right {
+	text-align: right;
+	width: 950px;
+}
+.txt-center {
+	text-align: center;
+	width: 950px;
+}
+.span-edit {
+	color: #edf1f7;
+	font-size: 20pt;
+	
+}
+#menu {
+	float: right;
+	margin-right: 40px;
+	margin-top: 30px;
+	color: #f5f5fa;
+	font-size: 20px;
+}
+.table-edit {
+	margin-left: 600px;
+	margin-top: 50px;
+	font-size: 15pt;
+	width: 950px;
+	margin-bottom: 380px;
+}
+.table-edit3 {
+	margin-left: 600px;
+	margin-top: 50px;
+	font-size: 15pt;
+	width: 950px;
+	margin-bottom: 500px;
+}
+.table-edit4 {
+	margin-left: 600px;
+	margin-top: 50px;
+	font-size: 15pt;
+	width: 950px;
+	margin-bottom: 800px;
+}
+.h1-edit {
+	margin-left: 600px;
+	margin-top: 50px;
+    font-size: 20pt;
+}
+#col {
+	color: #0f0f0f;
+	margin-bottom: 80px;
+	margin-top: 80px;
+
+}
+.tr-margi {
+	margin-top: 500px;
+}
+.col-button {
+	background-color: #4c6fa6;
+	padding-left: 25pt;
+	padding-top: 8pt;
+	padding-bottom: 8pt;
+	padding-right: 25pt;
+	border: none;
+}
+#txt1 {
+	width: 95%;
+}
+.head-color {
+	color: #43c447;
+	margin-left: 700px;
+	margin-bottom: 10px;
+	margin-top: 50px;
+}
+.head-color1 {
+	color: #43c447;
+	margin-left: 580px;
+	margin-bottom: 600px;
+	margin-top: 50px;
+}
+.h-color {
+	color: #a8b3bf;
+	margin-left: 300px;
+	margin-bottom: 600px;
+}
+#a2-color {
+	color: #1170d6;
+}
+.h1-edit1 {
+	margin-top: 100px;
+	margin-left: 300px;
+	font-size: 20pt;
+}
+.table-edit1 {
+	margin-left: 600px;
+	margin-top: 50px;
+	font-size: 15pt;
+	width: 950px;
+	margin-bottom: 50px;
+}
+.txt {
+	margin-left: 600px;
+	margin-top: 50px;
+	font-size: 20px;
+}
+
+	
+
