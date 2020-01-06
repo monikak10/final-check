@@ -35,7 +35,7 @@ public class MovieDaoCollectionImpl implements MovieDao {
 		List<Movie> newMovies = new ArrayList<Movie>();
 		Date today = new Date();
 		for (Movie movies : movieList) {
-			if (movies.getDateOfLaunch().after(today)) {
+			if (movies.getDateOfLaunch().before(today)) {
 				newMovies.add(movies);
 			}
 

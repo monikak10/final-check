@@ -30,7 +30,7 @@ public class MovieDaoCollectionImplTest {
 		MovieDao movieDao = new MovieDaoCollectionImpl();
 		List<Movie> movieList = movieDao.getMovieListCustomer();
 		for (Movie x : movieList) {
-			System.out.println(x.custString());
+			System.out.println(x);
 		}
 	}
 

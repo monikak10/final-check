@@ -1,5 +1,6 @@
 package com.cognizant.moviecruiser.dao;
 
+
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,6 +8,7 @@ import java.util.List;
 
 import com.cognizant.moviecruiser.model.Favorite;
 import com.cognizant.moviecruiser.model.Movie;
+
 
 public class FavoriteDaoCollectionImpl implements FavoriteDao {
 	private static HashMap<Long, Favorite> userFavorite;
@@ -25,7 +27,8 @@ public class FavoriteDaoCollectionImpl implements FavoriteDao {
 			MovieDao movieDao = new MovieDaoCollectionImpl();
 			Movie movies = movieDao.getMovie(movieId);
 			if (userFavorite.containsKey(userId)) {
-				userFavorite.get(userId).getMovieList().add(movies);
+				Favorite favorite=userFavorite.get(userId);
+				favorite.getMovieList().add(movies);
 			} else {
 				Favorite fav = new Favorite();
 				ArrayList<Movie> movieList = new ArrayList<>();
@@ -58,15 +61,21 @@ public class FavoriteDaoCollectionImpl implements FavoriteDao {
 	}
 
 	@Override
-	public void removeFavorite(long userId, long movieId) {
+	public void removeFavorite(long userId, long movieId) throws FavoriteEmptyException {
 		List<Movie> movieList = userFavorite.get(userId).getMovieList();
+		Favorite fav = userFavorite.get(userId);
+			if (fav==null|| movieList.isEmpty()) {
+			
+			throw new FavoriteEmptyException();
+			
+		}else {
 		for (Movie s : movieList) {
 			if (s.getId() == movieId) {
 				movieList.remove(s);
-			}
-			break;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+				break;
+			}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 		}
-
+		
 	}
-
+	}
 }

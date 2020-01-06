@@ -16,21 +16,20 @@ public class FavoriteDaoCollectionImplTest {
 
 	public static void testAddFavorite() throws FavoriteEmptyException {
 		FavoriteDao favoriteDao = new FavoriteDaoCollectionImpl();
-		long totalGross = 0l;
+		
 		favoriteDao.addFavorite(1, 2l);
-		favoriteDao.addFavorite(1, 5l);
-		favoriteDao.addFavorite(2, 1l);
+		favoriteDao.addFavorite(1, 4l);
+		favoriteDao.addFavorite(2, 5l);
 		favoriteDao.addFavorite(2, 3l);
 
 		List<Movie> movieListCustomer = favoriteDao.getAllFavorite(1);
 		System.out.println("User Added Favorite Movie:");
 		for (Movie movies : movieListCustomer) {
 			System.out.println(movies);
-			totalGross += movies.getBoxOffice();
 			
 		}
 		System.out.println("Favorite are :" + movieListCustomer.size());
-		System.out.println("total gross is :" + totalGross);
+		
 	}
 
 	public static void testRemoveFavorite() {
@@ -49,9 +48,10 @@ public class FavoriteDaoCollectionImplTest {
 	}
 
 	public static void testGetAllFavorite() throws FavoriteEmptyException {
-		FavoriteDao favoriteDao = new FavoriteDaoCollectionImpl();
+		
 		
 		try {
+			FavoriteDao favoriteDao = new FavoriteDaoCollectionImpl();
 			List<Movie> movieListCustomer = favoriteDao.getAllFavorite(1);
 			System.out.println("All Favorite Movie:");
 			for (Movie movies : movieListCustomer) {
