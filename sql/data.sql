@@ -11,7 +11,7 @@ VALUES
 	(4, 'Jurassic Park', 1671713208, 'No', '2017-07-02','Science Fiction', 'Yes'),
 	(5, 'Avengers:End Game', 2750760348, 'Yes', '2022-11-02','Superhero', 'Yes');
     
- SELECT * FROM  movie;   
+SELECT m_id AS "ID",m_title AS "Title" ,m_box_office AS "Box Office",m_active AS "Active",m_date_of_launch AS "Date of Launch",m_genre AS "Genre",m_has_treaser AS "Has Treaser" FROM movie;  
  
 -- --------------------------------------------------------------------------------------
 -- Update MenuItem
@@ -24,7 +24,15 @@ WHERE m_id=2;
 -- -------------------------------------------------------------------------------
 -- Display Admin List
 -- --------------------------------------------------------------------------------
-SELECT * FROM movie;
+SELECT 
+m_id AS "ID",
+m_title AS "Title" ,
+m_box_office AS "Box Office",
+m_active AS "Active",
+m_date_of_launch AS "Date of Launch",
+m_genre AS "Genre",
+m_has_treaser AS "Has Treaser" 
+FROM movie;
 
 -- -------------------------------------------------------------------------------
 -- User Details of User table
@@ -41,16 +49,22 @@ VALUES
 -- Display Admin Movie List
 -- --------------------------------------------------------------------------------
     
-SELECT * FROM user;
+SELECT 
+us_id AS "User ID",
+us_name AS "User Name" 
+FROM user;
 
 -- -------------------------------------------------------------------------------
 --  Customer Movie List
 -- -------------------------------------------------------------------------------
 
-SELECT m_title,m_has_treaser,m_box_office,m_genre
+SELECT m_title AS "Title" ,
+m_has_treaser AS "Has Treaser",
+m_box_office AS "Box Office" ,
+m_genre AS "Genre"
 FROM movie
 WHERE m_active='Yes' 
-AND m_date_of_launch < (SELECT(CURDATE()));
+AND m_date_of_launch < CURDATE();
 
 -- ------------------------------------------------------------------------------
 -- Adding Favorite in Favorite table
@@ -65,13 +79,20 @@ VALUES
 -- Display Favorite 
 -- --------------------------------------------------------------------------------
 
-SELECT * FROM favorite;
+SELECT
+fv_id AS "Favorite ID",
+fv_us_id AS "Favorite User ID",
+fv_pr_id "Favorite Primary ID"
+FROM favorite;
 
 -- --------------------------------------------------------------------------------
 -- view Favorite table
 -- --------------------------------------------------------------------------------
 
-SELECT m_title, m_box_office,m_genre
+SELECT
+ m_title AS "Title",
+ m_box_office AS "Box OFFICE",
+ m_genre AS "Genre"
 FROM movie
 INNER JOIN favorite
 ON fv_pr_id=m_id
@@ -82,7 +103,7 @@ WHERE fv_us_id=1;
 -- -----------------------------------------------------------------------------------
 
 SELECT 
-count(movie.m_box_office) AS "No_of_Favorite" 
+COUNT(movie.m_box_office) AS "No of Favorite" 
 FROM movie
 INNER JOIN favorite
 ON fv_pr_id=m_id
@@ -100,4 +121,8 @@ AND fv_pr_id=2;
 --  After Deleting from Favorite table
 -- ------------------------------------------------------------------------------------
 
-SELECT * FROM favorite;
+SELECT 
+fv_id AS "Favorite ID",
+fv_us_id AS "Favorite User ID",
+fv_pr_id "Favorite Primary ID"
+FROM favorite;

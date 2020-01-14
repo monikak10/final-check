@@ -28,14 +28,14 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `movie_cruiser`.`movie`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `movie_cruiser`.`movie` (
-  `m_id` INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `movie_cruiser`.`movie` ( `m_id` INT NOT NULL AUTO_INCREMENT,
   `m_title` VARCHAR(100) NULL,
   `m_box_office` DECIMAL(15) NULL,
   `m_active` VARCHAR(3) NULL,
   `m_date_of_launch` DATE NULL,
   `m_genre` VARCHAR(45) NULL,
   `m_has_treaser` VARCHAR(3) NULL,
+ 
   PRIMARY KEY (`m_id`))
 ENGINE = InnoDB;
 
