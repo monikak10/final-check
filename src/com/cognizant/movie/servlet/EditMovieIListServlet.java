@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.cognizant.moviecruiser.dao.MovieDao;
 import com.cognizant.moviecruiser.dao.MovieDaoCollectionImpl;
+import com.cognizant.moviecruiser.dao.MovieDaoSqlImpl;
 import com.cognizant.moviecruiser.model.Movie;
 import com.cognizant.moviecruiser.util.DateUtil;
 
@@ -56,7 +57,7 @@ public class EditMovieIListServlet extends HttpServlet {
 		boolean hasTreaser = request.getParameter("checkBox") != null;
 		try {
 			Movie m = new Movie(id, title, boxOffice, active, DateUtil.convertToDate(dateOfLaunch), genre, hasTreaser);
-			MovieDao movieDao = new MovieDaoCollectionImpl();
+			MovieDao movieDao = new MovieDaoSqlImpl();
 			movieDao.modifyMovie(m);
 			request.setAttribute("msg", "Movie List modified successfully");
 			RequestDispatcher rd = request.getRequestDispatcher("edit-movie-status.jsp");
